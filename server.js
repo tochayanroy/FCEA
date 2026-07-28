@@ -18,6 +18,14 @@ const PaymentRoutes = require('./routes/PaymentRoutes');
 const NotificationRoutes = require('./routes/NotificationRoutes');
 
 
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Server is running successfully 🚀",
+        timestamp: new Date().toISOString()
+    });
+});
+
 dotenv.config();
 app.use(express.json());
 app.use("/User", UserRoutes);
