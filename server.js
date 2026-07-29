@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const db = require('./config/database');
 require('./middleware/Passport-jwt');
 const path = require("path");
+const cors = require("cors");
 
 
 
@@ -17,6 +18,7 @@ const OrderRoutes = require('./routes/OrderRoutes');
 const PaymentRoutes = require('./routes/PaymentRoutes');
 const NotificationRoutes = require('./routes/NotificationRoutes');
 
+app.use(cors());
 
 app.get("/", (req, res) => {
     res.status(200).json({
