@@ -18,7 +18,6 @@ const OrderRoutes = require('./routes/OrderRoutes');
 const PaymentRoutes = require('./routes/PaymentRoutes');
 const NotificationRoutes = require('./routes/NotificationRoutes');
 
-app.use(cors());
 
 app.get("/", (req, res) => {
     res.status(200).json({
@@ -30,6 +29,8 @@ app.get("/", (req, res) => {
 
 dotenv.config();
 app.use(express.json());
+app.use(cors());
+
 app.use("/User", UserRoutes);
 app.use("/Product", ProductRoutes);
 app.use("/Category", CategoryRoutes);
